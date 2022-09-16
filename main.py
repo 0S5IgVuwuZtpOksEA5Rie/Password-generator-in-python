@@ -27,23 +27,23 @@ while run:
     # get settings
     correctDatatype = False
     while not correctDatatype:
-        lengthOfPassword = input('length of password: ')
-
-        if type(lengthOfPassword) == int:
+        try:
+            lengthOfPassword = int(input('\nlength of password: '))
             correctDatatype = True
-        else:
+        except ValueError:
             print("\nInvalid input\n")
             correctDatatype = False
 
     correctDatatype = False
     while not correctDatatype:
-        howManyPasswords = input('how many passwords: ')
-
-        if type(correctDatatype) == int:
+        try:
+            howManyPasswords = int(input('\nhow many passwords: '))
             correctDatatype = True
-        else:
+        except ValueError:
             print("\nInvalid input\n")
             correctDatatype = False
+
+    print('\n')
 
     # for every password
     for weatherPinOrNot in range(int(howManyPasswords)):
@@ -65,7 +65,7 @@ while run:
         if rerun == 'y':
             correctDatatype = True
             run = True
-        if rerun == 'n':
+        elif rerun == 'n':
             correctDatatype = True
             run = False
         else:
