@@ -12,7 +12,10 @@ while run:
     correctDatatype = False
     while not correctDatatype:
         # use alphanumeric characters or just numbers
-        weatherPinOrNot = input('pin(y/n): ')
+        try:
+            weatherPinOrNot = input('pin(y/n): ')
+        except KeyboardInterrupt:
+            quit()
 
         if weatherPinOrNot == 'y':
             # override to just numbers
@@ -33,6 +36,8 @@ while run:
         except ValueError:
             print("\nInvalid input\n")
             correctDatatype = False
+        except KeyboardInterrupt:
+            quit()
 
     correctDatatype = False
     while not correctDatatype:
@@ -42,6 +47,8 @@ while run:
         except ValueError:
             print("\nInvalid input\n")
             correctDatatype = False
+        except KeyboardInterrupt:
+            quit()
 
     print('\n')
 
@@ -56,11 +63,17 @@ while run:
 
             password += character
 
-        print(password)
+        try:
+            print(password)
+        except:
+            print(Exception)
 
     correctDatatype = False
     while not correctDatatype:
-        rerun = input('\nredo(y/n): ')
+        try:
+            rerun = input('\nredo(y/n): ')
+        except KeyboardInterrupt:
+            quit()
 
         if rerun == 'y':
             correctDatatype = True
